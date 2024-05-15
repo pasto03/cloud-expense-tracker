@@ -1,5 +1,5 @@
 {
-  "name": "4.expense-tracker-app",
+  "name": "cloud-expense-tracker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

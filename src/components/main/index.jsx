@@ -45,7 +45,13 @@ export default function Main() {
     const getUser = async () => {
         try {
             const url = `${process.env.REACT_APP_SERVER_URL}/api/auth/status`;
-            const res = await fetch(url, { credentials: "include" });
+            const res = await fetch(url, { 
+                credentials: "include",
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+                }
+            });
             try {
                 const user = await res.json();
                 setUser(user);
