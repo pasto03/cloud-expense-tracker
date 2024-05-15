@@ -28,7 +28,6 @@ export default function Main() {
         setTotalIncome(income);
     }, [allTransactions]);
 
-    /* alert before leave page
     useEffect(() => {
         const handleBeforeUnload = (event) => {
             const message = 'You have unsaved changes, are you sure you want to leave?';
@@ -42,17 +41,12 @@ export default function Main() {
             window.removeEventListener('beforeunload', handleBeforeUnload);
         };
     }, []);
-    */
 
     const getUser = async () => {
         try {
             const url = `${process.env.REACT_APP_SERVER_URL}/api/auth/status`;
             const res = await fetch(url, { 
                 credentials: "include",
-                headers: {
-                    "Access-Control-Allow-Origin": "*",
-                    'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-                }
             });
             try {
                 const user = await res.json();
@@ -65,6 +59,20 @@ export default function Main() {
         }
     };
 
+    async function fetchTest() {
+        try {
+            const url = `${process.env.REACT_APP_SERVER_URL}/`;
+            const res = await fetch(url);
+            try {
+                const data = await res.json();
+            } catch (error) {
+                console.log(error);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     // load transactions
     const getData = async () => {
         try {
@@ -75,6 +83,7 @@ export default function Main() {
     };
 
     useEffect(() => {
+        fetchTest();
         getUser();
     }, []);
 
