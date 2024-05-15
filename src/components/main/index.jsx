@@ -28,6 +28,7 @@ export default function Main() {
         setTotalIncome(income);
     }, [allTransactions]);
 
+    /* alert before leave page
     useEffect(() => {
         const handleBeforeUnload = (event) => {
             const message = 'You have unsaved changes, are you sure you want to leave?';
@@ -41,6 +42,7 @@ export default function Main() {
             window.removeEventListener('beforeunload', handleBeforeUnload);
         };
     }, []);
+    */
 
     const getUser = async () => {
         try {
