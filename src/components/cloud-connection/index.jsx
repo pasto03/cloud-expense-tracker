@@ -105,7 +105,7 @@ export default function CloudConnection({ user, transactions }) {
     return <div>
         <Button bg={"blue.400"} color={"black"} ml={"4"} px={"4"} onClick={() => { discordAuth(); nextCallback({ provider: "discord" }); }}>
             <FaDiscord size={"24"} />
-            <Text ml={"2"}>{btnText}</Text>
+            <Text ml={"2"}>{buttonText}</Text>
         </Button>
         <Button
             bg={"green.300"} color={"black"} ml={"4"} px={"8"}
