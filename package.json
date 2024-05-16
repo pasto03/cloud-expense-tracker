@@ -2,6 +2,7 @@
   "name": "cloud-expense-tracker",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://cloud-expense-tracker-api.onrender.com",
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
