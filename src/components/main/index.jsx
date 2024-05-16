@@ -88,7 +88,7 @@ export default function Main() {
     }, []);
 
     // comment in production
-    console.log(user);
+    // console.log(user);
 
     return (
         <Flex textAlign={"center"} flexDirection={"column"} pr={"5"} pl={"5"}>
