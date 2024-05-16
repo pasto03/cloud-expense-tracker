@@ -14,12 +14,12 @@ export default function CloudConnection({ user, transactions }) {
 
     const discordAuth = () => {
         if (user) return;
-        window.open(`$/api/auth/discord`, "_self");
+        window.open(`/api/auth/discord`, "_self");
     };
 
     const googleAuth = () => {
         if (user) return;
-        window.open(`$/api/auth/google`, "_self");
+        window.open(`/api/auth/google`, "_self");
     };
 
     // save transactions
