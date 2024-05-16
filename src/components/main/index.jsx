@@ -44,7 +44,7 @@ export default function Main() {
 
     const getUser = async () => {
         try {
-            const url = `${process.env.REACT_APP_SERVER_URL}/api/auth/status`;
+            const url = `/api/auth/status`;
             const res = await fetch(url, { 
                 credentials: "include",
             });
@@ -61,7 +61,7 @@ export default function Main() {
 
     async function fetchTest() {
         try {
-            const url = `${process.env.REACT_APP_SERVER_URL}/`;
+            const url = `/`;
             const res = await fetch(url);
             try {
                 const data = await res.json();

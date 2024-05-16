@@ -14,12 +14,12 @@ export default function CloudConnection({ user, transactions }) {
 
     const discordAuth = () => {
         if (user) return;
-        window.open(`${REACT_APP_SERVER_URL}/api/auth/discord`, "_self");
+        window.open(`$/api/auth/discord`, "_self");
     };
 
     const googleAuth = () => {
         if (user) return;
-        window.open(`${REACT_APP_SERVER_URL}/api/auth/google`, "_self");
+        window.open(`$/api/auth/google`, "_self");
     };
 
     // save transactions
@@ -30,7 +30,7 @@ export default function CloudConnection({ user, transactions }) {
                 return;
             }
             setIsSaving(true);
-            const url = `${REACT_APP_SERVER_URL}/api/users/transactions`;
+            const url = `/api/users/transactions`;
             const body = { provider: provider, userId: user.userId, transactions: [...transactions] };
 
             fetch(
@@ -65,7 +65,7 @@ export default function CloudConnection({ user, transactions }) {
             const body = { provider: provider, userId: user.userId };
 
             const res = await fetch(
-                `${REACT_APP_SERVER_URL}/api/users/transaction`,
+                `/api/users/transaction`,
                 {
                     method: "POST",
                     credentials: "include",
@@ -95,12 +95,14 @@ export default function CloudConnection({ user, transactions }) {
 
     useEffect(() => {
         if (restoreDelay) {
-            setTimeout(() => { setButtonText("Save") }, 1000);
+            setTimeout(() => { setButtonText("Save") }, 700);
             setRestoreDelay(false);
         } else {
             setButtonText(operation === "save" ? "Save" : "Load");
         }
     }, [operation, isSaving]);
+
+    console.log(`Button state: ${isSaving} || ${restoreDelay}`);
 
     return <div>
         {/* <Button bg={"blue.400"} color={"black"} ml={"4"} px={"4"} onClick={() => { discordAuth(); nextCallback({ provider: "discord" }); }}>
